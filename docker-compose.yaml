@@ -1,0 +1,54 @@
+version: "2.2"
+networks: 
+  cassandra-resto:
+
+services:
+  fastapi:
+    build:
+      context: ./
+    container_name: fastapi
+    ports:
+      - 8005:8000
+    volumes:
+    - ./API:/API
+    command: uvicorn API.api:app --reload --workers 1 --host 0.0.0.0 --port 8000
+    depends_on:
+    - cassandra-c01
+    # environment:
+    # - ENVIRONMENT=dev
+    # - TESTING=0
+    networks: 
+    - cassandra-resto
+
+  cassandra-c01:
+    container_name: cassandra-miamiam1
+    image: cassandra
+    # ports: 
+    #   - 9042:9042
+    environment:
+    - CASSANDRA_CLUSTER_NAME=Restaurants
+    volumes:
+    - ./data/cassandramiamiam1:/var/lib/cassandra
+   
+    networks: 
+    - cassandra-resto
+   
+  
+      
+  cassandra-c02:
+    container_name: cassandra-miamiam2
+    image: cassandra
+    # ports: 
+    #   - 9043:9042
+    command: /bin/bash -c "sleep 30 && echo ' --Pausing to let system catch up ... -->' && /docker-entrypoint.sh cassandra -f"
+    links:
+      - cassandra-c01:seed
+    environment:
+      - CASSANDRA_SEEDS=seed
+      - CASSANDRA_CLUSTER_NAME=Restaurants
+    volumes:
+    - ./data/cassandramiamiam2:/var/lib/cassandra
+    
+    networks: 
+    - cassandra-resto
+ 
