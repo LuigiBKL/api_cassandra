@@ -2,7 +2,7 @@
 ## Principe:
 Creer un conteneur pour fastapi capable de communiquer avec un cluster que l'on aura approvisionner en données à l'aide de 2 fichiers csv [restaurants.csv](/resources),et [restaurants_inspections.csv](/resources).
 
-## Installation des logiciels nécessaires
+## Installation
 
 On aura besoin du logiciel suivant:
 - [Docker desktop pour windows](https://www.docker.com/products/docker-desktop) pour gérer nos diffirénts conteneurs
