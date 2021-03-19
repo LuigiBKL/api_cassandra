@@ -27,6 +27,6 @@ Dans le cas où l'on souhaite changer de données il faudra modifier le fichier 
 -'docker cp chemindudossieràcopier nomduconteneur:/'
 
 FastApi
-[!image](/Capture2.png)
+![image](/Capture2.png)
 
 
