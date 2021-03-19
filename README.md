@@ -4,7 +4,7 @@ Creer un conteneur pour fastapi capable de communiquer avec un cluster que l'on 
 
 ## Installation des logiciels nécessaires
 
-On aura besoin des logiciels suivant:
+On aura besoin du logiciel suivant:
 - [Docker desktop pour windows](https://www.docker.com/products/docker-desktop) pour gérer nos diffirénts conteneurs
 
 ![image](/Capture1.png)
