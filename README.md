@@ -9,10 +9,6 @@ On aura besoin des logiciels suivant:
 
 ![image](/Capture1.png)
 
-- [Filezila](https://filezilla-project.org/) qui nous permettra de pouvoir déposer des fichiers directement sur le serveur où l'on souhaite déployer nos conteneurs
-
-![image](/Images/Filezila.png)
-
 ## Manipulation à faire
 Ouvrir le cmd se situer dans le dossier ou l'on souhaite travailer à l'aide de la commande 
 - cd de l'invite de commande
